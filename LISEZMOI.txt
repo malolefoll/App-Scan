@@ -1,0 +1,52 @@
+NetInv - scan du reseau local
+=============================
+
+APPLICATION
+  Double-clique sur "NetInv.bat".
+  - Ton reseau actuel est deja rempli : clique sur "Lancer le scan".
+  - Les appareils apparaissent au fur et a mesure ; "Arreter" stoppe le scan.
+  - Vue 3D : chaque appareil s'affiche autour du scanner, avec une couleur
+    selon son type (routeur, serveur, poste Windows, imprimante, autre).
+    Glisser pour tourner, molette pour zoomer, clic pour voir sa fiche.
+    Anneau rouge : ports sensibles ouverts.
+  - Clic sur un en-tete : trier. Champ "Filtrer" : rechercher.
+  - Double-clic sur une ligne : ouvrir l'interface web de l'appareil
+    (ou copier son IP). Clic droit : copier IP / MAC, analyser a nouveau.
+  - "Exporter..." : rapport HTML, CSV, JSON ou texte, dans le dossier "rapports".
+  - Lignes rouges : ports sensibles ouverts (FTP, Telnet, SMB, RDP...).
+
+RAPPORT RAPIDE
+  Double-clique sur "Rapport-rapide.bat".
+  - Appuie sur Entree pour scanner ton reseau actuel,
+    ou tape une plage, par exemple : 192.168.1.0/24  ou  192.168.1.10-50
+  - Le rapport "rapports\inventaire-reseau.html" s'ouvre dans ton navigateur
+    (il est remplace a chaque nouveau rapport rapide).
+
+PREREQUIS
+  Python 3.9 ou plus recent (winget install Python.Python.3.12).
+  Aucune autre installation, pas besoin d'etre administrateur.
+
+CE QUE L'OUTIL AFFICHE
+  Adresse IP, nom d'hote, adresse MAC, fabricant, ports ouverts, latence.
+  La MAC et le fabricant ne sont visibles que pour les appareils
+  du meme sous-reseau que ton PC (pas a travers un VPN ou un routeur).
+
+EN LIGNE DE COMMANDE (optionnel, depuis ce dossier)
+  py -m netinv gui --lang fr
+  py -m netinv scan 192.168.1.0/24 --lang fr
+  py -m netinv scan -p 22,80,443,8006 -o rapports\inventaire.csv
+  py -m netinv scan --help
+  py -m unittest            (les tests, sans toucher au reseau)
+
+CONTENU DU DOSSIER
+  NetInv.bat           l'application (fenetre)
+  Rapport-rapide.bat   le scan en console avec rapport HTML
+  rapports\            les exports et rapports (contiennent les adresses
+                       de ton reseau : ne les publie pas)
+  netinv\              le code de l'outil
+    ui\                l'application de bureau (fenetre, vue 3D, couleurs)
+    data\oui.txt       la liste des fabricants (prefixe MAC <TAB> nom)
+    locales\           les traductions
+  tests\               les tests automatiques
+
+A n'utiliser que sur des reseaux qui t'appartiennent ou que tu es autorise a scanner.

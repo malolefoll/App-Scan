@@ -1,0 +1,11 @@
+# Scan reports contain your network's IP and MAC addresses: never publish them
+rapports/*
+!rapports/.gitkeep
+*.html
+*.csv
+*.json
+!netinv/locales/*.json
+
+__pycache__/
+*.py[cod]
+.venv/
