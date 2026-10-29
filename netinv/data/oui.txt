@@ -1,0 +1,28 @@
+# netinv built-in OUI list (MAC prefix -> vendor).
+# Format: one entry per line, prefix<TAB>vendor. Lines starting with # are ignored.
+# This list is intentionally small. Contributions welcome! See CONTRIBUTING.md.
+# Source of truth: IEEE registry https://standards-oui.ieee.org/
+00:00:0C	Cisco
+00:03:93	Apple
+00:05:69	VMware
+00:07:CB	Freebox
+00:08:9B	QNAP
+00:0C:29	VMware
+00:0C:42	MikroTik
+00:11:32	Synology
+00:15:5D	Microsoft (Hyper-V)
+00:16:3E	Xen
+00:17:88	Philips Lighting
+00:1A:11	Google
+00:1C:42	Parallels
+00:50:56	VMware
+08:00:27	VirtualBox
+18:B4:30	Nest Labs
+24:A4:3C	Ubiquiti
+3C:5A:B4	Google
+52:54:00	QEMU / KVM
+B8:27:EB	Raspberry Pi
+BC:24:11	Proxmox
+DC:A6:32	Raspberry Pi
+E4:5F:01	Raspberry Pi
+F0:9F:C2	Ubiquiti
